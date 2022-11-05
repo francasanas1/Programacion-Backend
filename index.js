@@ -48,16 +48,11 @@ module.exports = Contenedor;
 const cont = new Contenedor();
 
 cont.save({ nombre: "Pepsi", precio: "1100" });
-cont.getById(1);
-cont.getAll();
-cont.deleteById(1);
-cont.deleteAll();
+cont.getById(1).then((res) => console.log(res));
+cont.getAll().then((res) => console.log(res));
+cont.deleteById(1).then((res) => console.log(res));
+cont.deleteAll().then((res) => console.log(res));
 
-console.log(cont.save({ nombre: "Pepsi", precio: "1100" }));
-console.log(cont.getById(3));
-console.log(cont.getAll());
-console.log(cont.deleteById(4));
-console.log(cont.deleteAll());
 // save(Object): Number - Recibe un objeto, lo guarda en el archivo, devuelve el id asignado.
 // getById(Number): Object - Recibe un id y devuelve el objeto con ese id, o null si no está.
 // getAll(): Object[] - Devuelve un array con los objetos presentes en el archivo.
